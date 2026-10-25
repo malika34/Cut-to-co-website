@@ -1841,6 +1841,15 @@ footer {
     border-radius: 10px
 }
 
+.modal-project iframe {
+    width: min(100%, 405px);
+    height: auto;
+    aspect-ratio: 9 / 16;
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 10px
+}
+
 .modal-project-details {
     width: 100%;
     padding: 18px 4px 4px

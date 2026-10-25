@@ -1,7 +1,7 @@
 /* TODO: Edit this array to add projects. Replace each image/video URL with your own work. */
 const portfolioVideo = path => encodeURI(`assets/${path}`);
 const projects = [
-  {title:"1",category:"All",displayCategory:"Business Corporate",client:"Before vs After",video:portfolioVideo("all reels/1.mp4"),reel:true,color:"#c6ff3d"},
+  {title:"1",category:"All",displayCategory:"Business Corporate",client:"Before vs After",youtubeId:"5qvUuek6SCQ",image:"https://img.youtube.com/vi/5qvUuek6SCQ/hqdefault.jpg",reel:true,color:"#c6ff3d"},
   {title:"2",category:"All",displayCategory:"Business Corporate",client:"Before vs After",video:portfolioVideo("all reels/2.mp4"),reel:true,color:"#ff2e93"},
   {title:"3",category:"All",displayCategory:"Real Estate",client:"Before vs After",video:portfolioVideo("all reels/3.mp4"),reel:true,color:"#22d3ee"},
   {title:"4",category:"All",displayCategory:"Real Estate",client:"Before vs After",video:portfolioVideo("all reels/4.mp4"),reel:true,color:"#7c3aed"},
@@ -43,6 +43,11 @@ function projectCategoryLabel(project){
 }
 function projectMedia(project,modal=false,loading="lazy"){
   const category=projectCategoryLabel(project);
+  if(project.youtubeId){
+    return modal
+      ? `<iframe src="https://www.youtube-nocookie.com/embed/${project.youtubeId}?autoplay=1&rel=0" title="${project.title} — ${category}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+      : `<img src="${project.image}" alt="${project.title} — ${category}" loading="${loading}">`;
+  }
   if(project.video){
     const poster=project.image?`poster="${project.image}"`:"";
     return modal
@@ -192,7 +197,10 @@ reelControls.addEventListener("keydown",e=>{
 document.querySelectorAll(".modal-close").forEach(b=>b.addEventListener("click",()=>b.parentElement.close()));
 document.querySelectorAll("dialog").forEach(d=>{
   d.addEventListener("click",e=>{if(e.target===d)d.close()});
-  d.addEventListener("close",()=>d.querySelectorAll("video").forEach(video=>video.pause()));
+  d.addEventListener("close",()=>{
+    d.querySelectorAll("video").forEach(video=>video.pause());
+    d.querySelectorAll("iframe").forEach(frame=>frame.remove());
+  });
 });
 const form=document.querySelector("#contactForm"),status=document.querySelector(".form-status");
 const whatsappNumber="923293009274";
