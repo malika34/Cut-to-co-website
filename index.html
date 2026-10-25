@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description"
+        content="Cut to Co creates thoughtful video edits for reels, e-commerce ads, brand stories, talking-head videos and more. Based in Pakistan, working with clients worldwide.">
+    <meta name="theme-color" content="#0A0A0B">
+    <meta property="og:title" content="Cut to Co — Video Editing & Storytelling">
+    <meta property="og:description" content="Versatile video editing for social content, product ads, brand stories and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/imgs/web%20logo.png">
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%237C3AED'/%3E%3Cpath d='M13 20h38v8H13zm0 16h22v8H13z' fill='white'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cut to Co — Video Editing & Storytelling</title>
+   <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="grain"></div>
+    <div class="scanlines"></div>
+    <div class="preloader">
+        <div><span class="eyebrow">INITIALIZING SEQUENCE</span><strong id="loadCount">00</strong>
+            <div class="load-track"><i></i></div>
+        </div>
+    </div>
+    <div class="cursor"><span></span></div>
+    <header class="nav"><a class="brand" href="#top" aria-label="Cut to Co home"><img
+                src="./assets/imgs/web logo.png" alt=""></a><button class="menu-toggle"
+            aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
+        <nav><a href="#work">Work</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#about">About</a><a class="nav-contact"
+                href="#contact">Start a project ↗</a></nav>
+    </header>
+    <main id="top">
+        <section class="hero">
+            <div class="hero-media">
+                <video autoplay muted loop playsinline
+                    poster="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1920&q=85">
+                    <source src="assets/hero%20bg.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="hero-wash"></div>
+            <div class="hero-content">
+                <p class="eyebrow">REELS <i></i> ADS <i></i> STORIES <i></i> MORE</p>
+                <h1 class="cut-title"><span>Every video</span><span>has a story.</span><span class="gradient">Let’s tell yours.</span></h1>
+                <p>From reels and product ads to longer videos, I shape each edit around your footage, your style and what you want to say.</p>
+                <div class="hero-actions"><a href="#contact" class="btn primary magnetic">Tell me your idea <b>↗</b></a><a
+                        href="#work" class="btn ghost magnetic">See my work <b>↓</b></a></div>
+            </div>
+        </section>
+        <section class="ticker">
+            <div><span>REELS <b>✦</b> E-COMMERCE ADS <b>✦</b> BRAND STORIES <b>✦</b> TALKING HEAD <b>✦</b> PROPERTY
+                    TOURS <b>✦</b> UGC <b>✦</b> SHORT-FORM & LONG-FORM <b>✦</b></span><span>REELS <b>✦</b>
+                    E-COMMERCE ADS <b>✦</b> BRAND STORIES <b>✦</b> TALKING HEAD <b>✦</b> PROPERTY TOURS <b>✦</b>
+                    UGC <b>✦</b> SHORT-FORM & LONG-FORM <b>✦</b></span></div>
+        </section>
+        <section class="work section" id="work">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">A FEW WAYS TO TELL A STORY</p>
+                    <h2>Different formats.<br><em>One good story.</em></h2>
+                </div>
+                <p>Explore selected work across property, business and UGC. Have another format in mind? Let’s shape the edit around it.</p>
+            </div>
+            <div class="filters" role="tablist"></div>
+            <div class="project-grid" id="projectGrid"></div>
+            <div class="reel-controls" id="reelControls" hidden>
+                <button type="button" data-reel-direction="-1" aria-label="Previous reel">← Previous</button>
+                <span id="reelCounter" aria-live="polite"></span>
+                <button type="button" data-reel-direction="1" aria-label="Next reel">Next →</button>
+            </div>
+            <p class="swipe-hint" id="swipeHint" hidden><span aria-hidden="true">←</span> Swipe left for next <i></i> Swipe right to go back <span aria-hidden="true">→</span></p>
+        </section>
+        <section class="timeline-section">
+            <div class="timeline-sticky">
+                <div class="timeline-top"><span class="eyebrow">FROM RAW FOOTAGE TO FINAL CUT</span><span
+                        id="timelineTime">00:00:00:00</span></div>
+                <h2>Every second<br><em>has a job.</em></h2>
+                <div class="timeline" id="timeline">
+                    <div class="time-ruler"></div>
+                    <div class="timeline-row"><span>V1</span>
+                        <div class="timeline-clips" id="timelineClips"></div>
+                    </div><button class="playhead" id="playhead" aria-label="Drag timeline playhead"><i></i></button>
+                </div>
+                <p>Strong openings, clear pacing and clean finishing—shaped around your footage and goal.</p>
+            </div>
+        </section>
+        <section class="services section" id="services">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">WHAT I CAN HELP YOU MAKE</p>
+                    <h2>One editor.<br><em>Many formats.</em></h2>
+                </div><span class="frame-count">06 SERVICES</span>
+            </div>
+            <div class="service-grid" id="serviceGrid"></div>
+            <div class="process">
+                <p class="eyebrow">A SIMPLE, CLEAR WORKFLOW</p>
+                <div>
+                    <article><b>01</b>
+                        <h3>Align</h3>
+                        <p>Share your footage, audience, platform and the result you want.</p>
+                    </article>
+                    <article><b>02</b>
+                        <h3>Build</h3>
+                        <p>I build the hook, pacing, captions and polish around your brief.</p>
+                    </article>
+                    <article><b>03</b>
+                        <h3>Deliver</h3>
+                        <p>Review the edit, share feedback and receive social-ready files.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="about section" id="about">
+            <div class="about-portrait">
+                <div class="portrait-frame"><!-- TODO: replace with your portrait image --><img
+                        src="/assets/imgs/My img.png"
+                        alt="Cut to Co video editor based in Pakistan" loading="lazy"></div><span>CUT TO CO / PAKISTAN
+                </span>
+            </div>
+            <div class="about-copy">
+                <p class="eyebrow">YOUR EDITOR, FROM PAKISTAN</p>
+                <h2>I turn your footage into <em>your next good edit.</em></h2>
+                <p>Hello i'm Malik Muhammad Zayd and i am an independent video editor based in Pakistan, working with clients locally and worldwide. I adapt the style to the project—whether it’s a social reel, e-commerce ad, talking-head video, property tour, brand story or something entirely different.</p>
+                <div class="software" aria-label="Editing software">
+                    <span><b class="software-icon software-icon-premiere" aria-hidden="true">Pr</b>PREMIERE PRO</span>
+                    <span><b class="software-icon software-icon-after-effects" aria-hidden="true">Ae</b>AFTER EFFECTS</span>
+                    <span><b class="software-icon software-icon-capcut" aria-hidden="true">CC</b>CAP CUT</span>
+                    <span><b class="software-icon software-icon-illustrator" aria-hidden="true">Ai</b>ILLUSTRATOR</span>
+                    <span><b class="software-icon software-icon-photoshop" aria-hidden="true">Ps</b>PHOTOSHOP</span>
+                </div>
+                <div class="about-stats">
+                    <div><strong>Short</strong><small>reels & social edits</small></div>
+                    <div><strong>Long</strong><small>stories & full videos</small></div>
+                    <div><strong>Any idea</strong><small>style shaped to your brief</small></div>
+                </div>
+            </div>
+        </section>
+        <section class="pricing section" id="pricing">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">CLEAR PRICING / NO SURPRISES</p>
+                    <h2>Choose your<br><em>kind of edit.</em></h2>
+                </div>
+                <p>Pick a one-time reel or a monthly package. Every price is in PKR; custom formats and larger projects are quoted around your brief.</p>
+            </div>
+            <div class="pricing-group">
+                <div class="pricing-group-head">
+                    <p class="eyebrow">ONE-TIME EDITS</p>
+                    <span>One edit, one clear price</span>
+                </div>
+                <div class="pricing-cards pricing-cards-single">
+                    <article class="price-card">
+                        <span class="price-card-kicker">ONE-TIME / SIMPLE EDIT</span>
+                        <h3>Basic Reel</h3>
+                        <p class="price-description">A clean, straightforward edit for your short-form content.</p>
+                        <p class="price-amount"><span>Rs.</span> 1,500</p>
+                        <button class="price-cta" type="button" data-budget="Basic Reel — Rs. 1,500 PKR">Choose Basic <span aria-hidden="true">↗</span></button>
+                        <ul class="price-features">
+                            <li>For a reel, ad or social video</li>
+                            <li>Clean first cut</li>
+                            <li>Client-provided footage</li>
+                        </ul>
+                    </article>
+                    <article class="price-card price-card-featured">
+                        <span class="price-card-kicker">ONE-TIME / POLISHED EDIT</span>
+                        <h3>Standard Reel</h3>
+                        <p class="price-description">A polished short-form edit, shaped around your footage and platform.</p>
+                        <p class="price-amount"><span>Rs.</span> 2,500</p>
+                        <button class="price-cta" type="button" data-budget="Standard Reel — Rs. 2,500 PKR">Choose Standard <span aria-hidden="true">↗</span></button>
+                        <ul class="price-features">
+                            <li>Polished short-form edit</li>
+                            <li>Shaped around your footage</li>
+                            <li>Edited for your platform</li>
+                        </ul>
+                    </article>
+                    <article class="price-card">
+                        <span class="price-card-kicker">ONE-TIME / MORE CREATIVE DETAIL</span>
+                        <h3>Advanced Reel</h3>
+                        <p class="price-description">More room for storytelling, detail and a distinctive editing style.</p>
+                        <p class="price-amount"><span>Rs.</span> 4,000</p>
+                        <button class="price-cta" type="button" data-budget="Advanced Reel — Rs. 4,000 PKR">Choose Advanced <span aria-hidden="true">↗</span></button>
+                        <ul class="price-features">
+                            <li>More room for storytelling</li>
+                            <li>Extra creative detail</li>
+                            <li>Distinctive editing style</li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="custom-price">
+                    <div>
+                        <span class="price-card-kicker">TAILORED TO YOUR BRIEF</span>
+                        <h3>Need something custom?</h3>
+                        <p>For product ads, brand stories, longer edits or another format, share your brief for a tailored quote.</p>
+                    </div>
+                    <button class="price-cta" type="button" data-budget="Custom project — share my format and editing brief">Get a custom quote <span aria-hidden="true">↗</span></button>
+                </div>
+            </div>
+            <div class="pricing-group pricing-monthly">
+                <div class="pricing-group-head">
+                    <p class="eyebrow">MONTHLY REEL PACKAGES</p>
+                    <span>A set number of reels each month</span>
+                </div>
+                <div class="pricing-cards pricing-cards-monthly">
+                    <article class="price-card">
+                        <span class="price-card-kicker">A STEADY START</span>
+                        <h3>Starter</h3>
+                        <p class="price-description">A steady start for your monthly social content.</p>
+                        <p class="price-amount"><span>Rs.</span> 12,000 <small>/ month</small></p>
+                        <button class="price-cta" type="button" data-budget="Starter — 8 Reels — Rs. 12,000 PKR">Choose Starter <span aria-hidden="true">↗</span></button>
+                        <ul class="price-features">
+                            <li>8 reels each month</li>
+                            <li>Monthly package</li>
+                            <li>Client-provided footage</li>
+                        </ul>
+                    </article>
+                    <article class="price-card price-card-featured">
+                        <span class="price-card-kicker">MORE ROOM TO GROW</span>
+                        <h3>Growth</h3>
+                        <p class="price-description">More room to grow your regular content output.</p>
+                        <p class="price-amount"><span>Rs.</span> 24,000 <small>/ month</small></p>
+                        <button class="price-cta" type="button" data-budget="Growth — 12 Reels — Rs. 24,000 PKR">Choose Growth <span aria-hidden="true">↗</span></button>
+                        <ul class="price-features">
+                            <li>12 reels each month</li>
+                            <li>Monthly package</li>
+                            <li>Client-provided footage</li>
+                        </ul>
+                    </article>
+                    <article class="price-card">
+                        <span class="price-card-kicker">FULL CONTENT RHYTHM</span>
+                        <h3>Pro</h3>
+                        <p class="price-description">A full content rhythm for consistent posting.</p>
+                        <p class="price-amount"><span>Rs.</span> 36,000 <small>/ month</small></p>
+                        <button class="price-cta" type="button" data-budget="Pro — 20 Reels — Rs. 36,000 PKR">Choose Pro <span aria-hidden="true">↗</span></button>
+                        <ul class="price-features">
+                            <li>20 reels each month</li>
+                            <li>Monthly package</li>
+                            <li>Client-provided footage</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+            <details class="pricing-terms">
+                <summary>Good to know <span aria-hidden="true">+</span></summary>
+                <ul>
+                    <li>50% advance payment.</li>
+                    <li>2 revisions included; extra revisions are charged separately.</li>
+                    <li>Client provides raw footage.</li>
+                    <li>Prices may vary depending on editing complexity.</li>
+                </ul>
+            </details>
+            <p class="pricing-note">All prices are shown in PKR. Final pricing may vary depending on editing complexity.</p>
+        </section>
+        <section class="contact" id="contact">
+            <div class="contact-top">
+                <p class="eyebrow">REELS / ADS / STORIES / YOUR IDEA</p>
+                <h2>Tell me the idea.<br><em>I’ll shape the edit.</em></h2><a class="btn lime magnetic"
+                    href="https://wa.me/923293009274?text=Hi%20Cut%20to%20Co%2C%20I%27d%20like%20to%20talk%20about%20a%20project."
+                    target="_blank" rel="noopener">WhatsApp me <b>↗</b></a>
+                <p class="contact-mail">Share your project details and they’ll be ready to send directly on WhatsApp.</p>
+            </div>
+            <form class="contact-form" id="contactForm" novalidate>
+                <div class="form-row"><label>YOUR NAME<input name="name" required
+                            placeholder="What should I call you?"></label><label>PROJECT TYPE<select name="type" required>
+                            <option value="">Select an edit</option>
+                            <option>Social media reel</option>
+                            <option>E-commerce / product ad</option>
+                            <option>Talking-head / business video</option>
+                            <option>UGC / creator-style ad</option>
+                            <option>Brand story / promotional video</option>
+                            <option>Property / real estate video</option>
+                            <option>Long-form video</option>
+                            <option>Monthly content package</option>
+                            <option>Other / custom project</option>
+                        </select></label><label>BUDGET<select name="budget">
+                            <option value="">Select a service or package</option>
+                            <optgroup label="One-time edits">
+                                <option value="Basic Reel — Rs. 1,500 PKR">Basic Reel — Rs. 1,500 PKR</option>
+                                <option value="Standard Reel — Rs. 2,500 PKR">Standard Reel — Rs. 2,500 PKR</option>
+                                <option value="Advanced Reel — Rs. 4,000 PKR">Advanced Reel — Rs. 4,000 PKR</option>
+                                <option value="Custom project — share my format and editing brief">Custom project — share my format and editing brief</option>
+                            </optgroup>
+                            <optgroup label="Monthly packages">
+                                <option value="Starter — 8 Reels — Rs. 12,000 PKR">Starter — 8 Reels — Rs. 12,000 PKR</option>
+                                <option value="Growth — 12 Reels — Rs. 24,000 PKR">Growth — 12 Reels — Rs. 24,000 PKR</option>
+                                <option value="Pro — 20 Reels — Rs. 36,000 PKR">Pro — 20 Reels — Rs. 36,000 PKR</option>
+                            </optgroup>
+                            <option value="Let’s discuss a custom project">Let’s discuss a custom project</option>
+                        </select></label></div>
+                <label>THE BRIEF<textarea name="message" required
+                        placeholder="Tell me your idea, the style you have in mind, where the video will be used and what you want it to achieve."></textarea></label><button
+                    class="btn primary magnetic" type="submit">Continue to WhatsApp <b>↗</b></button>
+                <p class="form-status" role="status"></p>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-wordmark">CUT <i>✦</i> TO <i>✦</i> CO</div>
+        <div class="footer-bottom"><span>© 2026 CUT TO CO</span>
+            <div><!-- TODO: replace social links --><a href="#">Instagram</a><a href="#">YouTube</a><a
+                    href="#">LinkedIn</a><a href="#">Behance</a></div><a href="#top">BACK TO START ↑</a>
+        </div>
+    </footer>
+    <a class="floating-wa magnetic" href="https://wa.me/923293009274?text=Hi%20Cut%20to%20Co" target="_blank"
+        rel="noopener" aria-label="Message Cut to Co on WhatsApp"><svg class="whatsapp-icon" viewBox="0 0 24 24"
+            aria-hidden="true"><path
+                d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.1 1.6 5.9L0 24l6.5-1.7a11.8 11.8 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.4ZM12.1 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.8 9.8 0 1 1 8.6 4.8Zm5.4-7.3c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.1 3c.2.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.1-1.3-.1-.2-.3-.3-.6-.4Z" />
+        </svg><span>WhatsApp</span></a>
+    <dialog class="project-modal" id="projectModal"><button class="modal-close">×</button>
+        <div id="modalContent"></div>
+    </dialog>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
